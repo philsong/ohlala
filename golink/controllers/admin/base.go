@@ -1,12 +1,12 @@
 package admin
 
 import (
-    "github.com/QLeelulu/goku"
-    "github.com/QLeelulu/ohlala/golink/filters"
+	"github.com/QLeelulu/goku"
+	"github.com/philsong/ohlala/golink/filters"
 )
 
 var adminController *goku.ControllerBuilder = goku.Controller("_golink_admin").
-    Filters(filters.NewRequireAdminFilter())
+	Filters(filters.NewRequireAdminFilter())
 
 // render the view and return a *ViewResult
 // it will find the view in these rules:
