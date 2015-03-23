@@ -1,33 +1,32 @@
 package main
 
 import (
-    "github.com/QLeelulu/goku"
-    "github.com/QLeelulu/ohlala/golink/utils"
-    "github.com/QLeelulu/ohlala/golink/models"
-    "fmt"
+	"fmt"
+	"github.com/QLeelulu/goku"
+	"github.com/philsong/ohlala/golink/models"
+	"github.com/philsong/ohlala/golink/utils"
 )
-
 
 func main() {
 	//ls := utils.LinkSearch{}
 	//ls.SearchLink("名次", 1, 30)
 	//return
 
-    var db *goku.MysqlDB = models.GetDB()
+	var db *goku.MysqlDB = models.GetDB()
 	defer db.Close()
-    rows, _ := db.Query("SELECT l.id,l.title,l.context,l.topics,u.Name,l.context_type FROM `link` l INNER JOIN `user` u ON l.user_id=u.id") 
+	rows, _ := db.Query("SELECT l.id,l.title,l.context,l.topics,u.Name,l.context_type FROM `link` l INNER JOIN `user` u ON l.user_id=u.id")
 	var linkId int64
 	var title string
 	var context string
 	var topics string
 	var userName string
 	var contextType int
-    for rows.Next() {
-        rows.Scan(&linkId, &title, &context, &topics, &userName, &contextType)
-        addLinkForSearch(contextType, linkId, title, context, topics, userName)
-    }
+	for rows.Next() {
+		rows.Scan(&linkId, &title, &context, &topics, &userName, &contextType)
+		addLinkForSearch(contextType, linkId, title, context, topics, userName)
+	}
 
-    fmt.Println("执行完成")
+	fmt.Println("执行完成")
 
 }
 
@@ -54,24 +53,3 @@ func addLinkForSearch(contextType int, linkId int64, title string, context strin
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

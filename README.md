@@ -42,7 +42,7 @@ go get code.google.com/p/goauth2/oauth
 
 2、启动MySQL和Redis服务。
 
-3、建MySQL数据库： [db/link.sql](https://github.com/QLeelulu/ohlala/blob/master/golink/db/link.sql)
+3、建MySQL数据库： [db/link.sql](https://github.com/philsong/ohlala/blob/master/golink/db/link.sql)
 
 4、修改 `golink/config.go` 里面与MySQL和Redis相关的配置，然后执行：
 
@@ -154,7 +154,7 @@ $go run app.go
         16  jjyy                    3.6%
         21  Hippasus                4.5%
 
-完整的贡献者列表[请看这里](https://github.com/QLeelulu/ohlala/graphs/contributors).
+完整的贡献者列表[请看这里](https://github.com/philsong/ohlala/graphs/contributors).
 
 ## License ##
 
